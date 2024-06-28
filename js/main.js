@@ -1,5 +1,5 @@
-const apiKey = "vtoX8qe474bcBdVDhkw5vzX43E2BXwIm";
-const term = "Guns N Roses";
+const apiKey = "LbSB5LtJtC2OJev3E1fmUOtyaqfucypI";
+const term = "Messi";
 const llamada = fetch(`
 https://api.giphy.com/v1/gifs/search
 ?api_key=${apiKey}
