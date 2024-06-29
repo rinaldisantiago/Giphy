@@ -1,12 +1,12 @@
 const apiKey = "LbSB5LtJtC2OJev3E1fmUOtyaqfucypI";
-let entrada = document.getElementById("entrada");
+let term = document.getElementById("entrada");
 let boton = document.getElementById("buscar");
 
-const gifFetch = (keyboard) => {
+const giphyFetch = (entrada) => {
     return fetch(`
 https://api.giphy.com/v1/gifs/search
 ?api_key=${apiKey}
-&q=${keyboard}
+&q=${entrada}
 &limit=10
 &offset=0
 &rating=g
@@ -15,8 +15,8 @@ https://api.giphy.com/v1/gifs/search
 }
 
 boton.addEventListener("click", () => {
-    let term = entrada.value;
-    gifFetch(term);
+    term = term.value;
+    giphyFetch(term)
     
     .then((response) => {
         return response.json();
@@ -29,6 +29,7 @@ boton.addEventListener("click", () => {
           document.body.appendChild(imagen);
         });
     })
+
     .catch((error) => {
         console.error(error.message);
       });
